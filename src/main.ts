@@ -7,6 +7,9 @@ import './assets/css/tailwind.css'
 import VueAgile from 'vue-agile'
 import VueCarousel from 'vue-carousel'
 import './assets/fonts/Quicksand/Quicksand.css'
+import './assets/fonts/Quicksand/Quicksand.css'
+
+
 
 const app = createApp(MainPage)
 

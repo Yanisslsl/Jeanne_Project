@@ -1,64 +1,52 @@
 <template>
   <div  :options="options" id="fullpage">
-   <first-page></first-page>
+    <first-page></first-page>
     <second-page></second-page>
-    <home></home>
-    <fourth-page></fourth-page>
-    <about></about>
     <third-page></third-page>
-    <a-propos></a-propos>
+    <fourth-page></fourth-page>
 
-   
-   
-   
 </div>
 </template>
 
 <script lang='ts'>
 import FullPage from "fullpage.js";
 import 'fullpage.js/dist/fullpage.css'
-import Home from './Home.vue'
-import About from './About.vue'
-import FirstPage from './FirstPage.vue'
 import SecondPage from './SecondPage.vue'
+import FirstPage from './FirstPage.vue'
 import ThirdPage from './ThirdPage.vue'
-import FourthPage from './FourthPage.vue'
-import APropos from './APropos.vue'
+
 
 
 
 
 import { Options, Vue } from 'vue-class-component';
+import FourthPage from "./FourthPage.vue";
  // @ is an alias to /src
+window.addEventListener('scroll', () => {
+  console.log(window.scrollY)
+})
+console.log("HELLo")
 
 @Options({
   components: {
-    Home,
-    About,
-    FirstPage,
     SecondPage,
-    ThirdPage, 
-    FourthPage,
-    APropos
+    FirstPage,
+    ThirdPage,
+    FourthPage
   }
 })
 export default class MainPage extends Vue {
-    fullPage: any = null
+    fullPage = null
 
 
-   mounted() {
-    
-    // console.log('hello')
-    // on créer le composant
+   mounted(): void {
     this.fullPage = new FullPage('#fullpage', {
-      // options here
       autoScrolling: true,
       scrollHorizontally: true,
       scrollBar: false,
       lockAnchors: true,
       continuousHorizontal: true,
       licenseKey: 'OPEN-SOURCE-GPLV3-LICENSE',
-
       anchors: ['home', 'values', 'knowledge', 'openSource', 'contact'],
       verticalCentered:false,
       menu: '.nav-bar',
@@ -67,33 +55,14 @@ export default class MainPage extends Vue {
       navigationPosition: 'left',
       dragAndMove: true,
       slidesNavigation: true,
-     
       scrollOverflow: true,
       fixedElements: '.c-top-bar, .social',
-
-      // onLeave: (origin: unknown, destination: any) => {
-      //   bus.emit(BusEventList.ChangeSection, {origin, destination})
-      //   // console.log(this.$router)
-      //   this.$router.replace('/' + destination.anchor)
-      // },
-
-      afterLoad: (origin: unknown, destination: unknown, direction: unknown) => {
-        // let activeSection: string
-        // const currentRoute: string | string[] = this.$route.params.section //
-      
-        // if (this.fullPage == null) {
-        //   bus.on(BusEventList.MainComponentMounted, () => {
-        //     activeSection = this.fullPage.getActiveSection().anchor
-        //     if (activeSection !== currentRoute) {
-        //       this.fullPage.moveTo(currentRoute)
-        //     }
-        //   })
-        // }
-      },
-
-
-
+      // onLeave: function(origin: any, destination: any, direction: any, trigger: any){
+      //   console.log(origin, destination, direction, trigger)
+      //   console.log(document.getElementById('#img-first-page'))
+      // }
     })
+    
     const navButtons = document.getElementById('fp-nav')
 
 
@@ -104,7 +73,10 @@ export default class MainPage extends Vue {
     // arrowRight[1].style.display += 'none'
     navButtons.style.display = 'none'
     }
+
+    
 }
+
 
 }
 </script>
@@ -119,9 +91,14 @@ export default class MainPage extends Vue {
   margin-left: 0px;
   
   overflow-x: hidden;
-  font-family: 'Quicksand', Arial, Helvetica, sans-serif;
+  font-family: 'Cormorant', Arial, Helvetica, sans-serif;
   font-size: 12px;
    
+}
+
+@font-face {
+  font-family: 'Cormorant';
+  src: URL('../assets/fonts/Julius_Sans_One/JuliusSansOne-Regular.ttf') format('truetype');
 }
 
 
