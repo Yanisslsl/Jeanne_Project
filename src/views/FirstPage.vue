@@ -1,47 +1,39 @@
 <template>
-  <div class="section">
-    <div class="h-screen">
-      <div class="h-full">
-        <div id='main' class="absolute left-1/4 top-1/4 w-full h-full">
-          <div  class="flex flex-col justify-start space-y-4	text-left z-0">
-            <div class="text-7xl font-semibold">
-              Jeanne Triadou<br>
+      <div class="absolute top-24 w-full h-full">
+        <div class="flex items-center justify-center w-full h-3/4 ">
+          <div class="flex flex-col w-full h-full md:pl-24 md:pr-24 pr-5 pl-5">
+            <h1 class="md:pt-0 md:font-medium leading-tight md:text-5xl mt-0 mb-10 text-blue-600 text-base ">Article: Service de stockage</h1>
+            <div class="font-medium text-left md:text-xl text-base ">
+              Durant ma période de stage j'ai été amené a travailler sur un projet ayant pour but de simplifier la gestion de divers médias (image, video, pdf…). 
+              En effet au sein de différents projets de notre entreprise, le client final du produit est souvent amené a pouvoir avoir accès a différents types de médias. Par exemple en tant que client je peux vouloir téléverser une photo de moi afin de la mettre en image de profil. 
+              Ce besoin se retrouvant dans plusieurs de nos projets , un service nous permettant de pouvoir téléverser et télécharger des fichiers était implémenter dans chacun d’eux.
+              Il était dont interessant de créer un système nous permettant de centraliser ce service afin d’avoir une seule implémentation de celui-ci dans chacun de nos projets.
+              J’ai passé  ainsi une partie non négligeable de mon temps de stage a travailler sur ce projet et celui ci ma permis de monter en compétence tant d’un point de vue technique que d’un point de vue méthodologique.
             </div>
-            <div class="text-6xl">
-              Photographe professionel,<br>
+            <br>
+            <br>
+            <br>
+
+            <div class="font-medium text-left md:text-xl text-base ">
+              D’un point de vue conceptuel le projet peut se résumer ainsi. Un client va vouloir televerser un fichier sur notre serveur, lorsque le client va envoyer sa  requête contenant son fichier celle ci va être proxifier par le back-end du projet  vers le service de stockage qui va lui meme l’envoyer au provider. 
+              Une fois le fichier a été intégralement revu par le provider, le service de stockage enverra une requête au webhook du backend ( avec les informations relatives au fichier; nom du fichier m type du fichier…) afin de notifier le statut du televersement. 
+              De cette manière toutes les informations sensibles du fichier seront inconnus du client qui recevra juste le satis de sa requête (réussi ou non). De plus toutes les informations relayés entre le service de stockage et le back-end sont cryptés ce qui permet une sécurisation des informations transmises.
             </div>
-            <div class="text-6xl">
-              passioné de <span class="font-semibold">photos</span> depuis toujours, <br>
-            </div>
-            <div class="text-6xl">
-              basé sur <span class="font-semibold"> Bordeaux</span><br>
-            </div>
-          </div>
-          <div id="main_image">
-            <img id='img-first-page' src="https://images.prismic.io/rluijtenant/5dd90ecd-33d0-4a4b-a1a1-60243ab41f56_augstmatthorn-1.jpg?auto=compress,format&w=1120&ar=1.1096433289&fit=crop&dpr=1" alt="">
           </div>
         </div>
       </div>
-    </div>
-  </div>
+   
+
 </template>
 
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
-import '../assets/Images/bg1.JPG'
-
- // @ is an alias to /src
-
 @Options({
   components: {
    },
 })
 export default class FirstPage extends Vue {
-  hey = 'dsss'
-  options = {
-    autoplay: true,
-    dots: false
-  }
+
 }
 </script>
 

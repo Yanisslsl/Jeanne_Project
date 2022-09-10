@@ -1,11 +1,16 @@
 import { createRouter, createWebHashHistory, RouteRecordRaw } from 'vue-router'
-import MainPage from '../views/MainPage.vue'
-
+import FirstPage from '../views/FirstPage.vue'
+import SecondPage from '../views/SecondPage.vue'
 const routes: Array<RouteRecordRaw> = [
   {
     path: '/',
     name: 'Main',
-    component: MainPage
+    component: SecondPage
+  },
+  {
+    path: '/storage-proxy',
+    name: 'Main',
+    component: FirstPage
   },
 
 ]

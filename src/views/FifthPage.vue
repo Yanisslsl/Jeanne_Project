@@ -3,34 +3,37 @@
 
   </div>
 </template>
+
 <script lang="ts">
 import { Options, Vue } from 'vue-class-component';
+import '../assets/Images/bg1.JPG'
+
  // @ is an alias to /src
 
 @Options({
   components: {
-
-  },
+   },
 })
-export default class ThirdPage extends Vue {
+export default class FifthPage extends Vue {
+  hey = 'dsss'
+  options = {
+    autoplay: true,
+    dots: false
+  }
 }
 </script>
+
+
 <style scoped>
+
+
 #main_image {
   position: absolute;
-  top: 20vh;
-  left: 20vh;
-  width: 100vh;
-}
-#main_image1 {
-  position: relative;
-  top: 20%;
-  left: 125vh;
-  width: auto;
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-
+  z-index: -10;
+  top: 40%;
+  left: 10%;
+  height: 90%;
+  width: 100%;
 }
 
 #img-first-page {
@@ -42,6 +45,7 @@ export default class ThirdPage extends Vue {
 @media screen and (min-width: 640px) {
 }
 
+ 
 
 </style>
 

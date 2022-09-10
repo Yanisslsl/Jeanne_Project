@@ -14,7 +14,7 @@ import '../assets/Images/bg1.JPG'
   components: {
    },
 })
-export default class FourthPage extends Vue {
+export default class SixthPage extends Vue {
   hey = 'dsss'
   options = {
     autoplay: true,
@@ -27,22 +27,28 @@ export default class FourthPage extends Vue {
 <style scoped>
 
 
-#main_image {
-  position: absolute;
-  z-index: -10;
-  top: 60%;
-  left: 30%;
-  height: 90%;
-  width: 100%;
-}
-
 #img-first-page {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
 
-@media screen and (min-width: 640px) {
+#main_image1 {
+  position: absolute;
+  top: 30vh;
+  left: 20vh;
+  width: 35vh;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+}
+
+#main_image {
+  position: relative;
+  top: 30vh;
+  left: 65vh;
+  width: 100vh;
 }
 
  
